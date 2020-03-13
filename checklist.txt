@@ -1,0 +1,82 @@
+PC-01
+
+
+
+Configurar nome do computador PC-01
+Configurar o IP 192.168.0.10
+Configurar Mascara 255.255.255.0
+Configurar Gateway 192.168.0.1
+
+PC-02
+
+
+
+Configurar nome do computador PC-02
+Configurar o IP 172.16.0.10
+Configurar Mascara 255.255.0.0
+Configurar Gateway 172.16.0.1
+
+SW-01
+
+
+
+Configurar Hostname SW-01(hostname SW-01)
+Configurar Banner (banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS.")
+Criar um usuário local com Privilegio 15 (username mardjff privilege 15 secret senha)
+Definir senha da Enable (Enable secret marcelo*enable)
+Ativar Login local na Enable(Login Local)
+Definir senha da Console (Line console 0) (Password marcelo*console)
+Ativar Login local Console (Line console 0) (Login Local)
+Definir Domínio Local 1rede.local (ip domain-name 1rede.local)
+Ativar Chave de SSH (crypto key generate rsa general-key modulus 1024)
+Definir senha da VTY (line vty 0 15 ) (password marcelo*vty)
+Ativar acesso VTY (Transport input ssh) (Password marcelo*vty) (login local)
+Ativar o Login local na VTY (login local) (line vty 0 15)
+Encryptar todas as senhas (service password-Encryption)
+Configurar IP na Vlan (interface Vlan 1) (ip address 192.168.0.254 255.255.255.0)
+Ativar a interface VLAN (no shutdown)
+Definir Gateway (ip default-gateway 192.168.0.1)
+Salvar configurações (WR)
+
+SW-02
+
+
+
+Configurar Hostname SW-02 (hostname SW-02)
+Configurar Banner (banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS.")
+Criar um usuário local com Privilegio 15 (username mardjff privilege 15 secret senha)
+Definir senha da Enable (Enable secret marcelo*enable)
+Ativar Login local na Enable(Login Local)
+Definir senha da Console (Line console 0) (Password marcelo*console)
+Ativar Login local Console (Line console 0) (Login Local)
+Definir Domínio Local 1rede.local (ip domain-name 1rede.local)
+Ativar Chave de SSH (crypto key generate rsa general-key modulus 1024)
+Definir senha da VTY (line vty 0 15 ) (password marcelo*vty)
+Ativar acesso VTY (Transport input ssh) (login local)
+Ativar o Login local na VTY (login local) (line vty 0 15)
+Encryptar todas as senhas (service password-Encryption)
+Configurar IP na Vlan (interface Vlan 1) (ip address 172.16.255.254 255.255.0.0)
+Ativar a interface VLAN (no shutdown)
+Definir Gateway (ip default-gateway 172.16.0.1)
+Salvar configurações (WR)
+
+RT-01
+
+
+
+Configurar Hostname RT-01 (hostname RT-01)
+Configurar Banner (banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS.")
+Criar um usuário local com Privilegio 15 (username mardjff privilege 15 secret senha)
+Definir senha da Enable (Enable secret marcelo*enable)
+Ativar Login local na Enable(Login Local)
+Definir senha da Console (Line console 0) (Password marcelo*console)
+Ativar Login local Console (Line console 0) (Login Local)
+Definir Domínio Local 1rede.local (ip domain-name 1rede.local)
+Ativar Chave de SSH (crypto key generate rsa general-key modulus 1024)
+Definir senha da VTY (line vty 0 15 ) (password marcelo*vty)
+Ativar acesso VTY (Transport input ssh) (Password marcelo*vty) (login local)
+Ativar o Login local na VTY (login local) (line vty 0 15)
+Encryptar todas as senhas (service password-Encryption)
+Configurar o IP na interface g0/0 (192.168.0.1 255.255.255.0)
+Configurar o IP na interface g0/1 (172.16.0.1 255.255.0.0)
+Salvar configurações (WR)
