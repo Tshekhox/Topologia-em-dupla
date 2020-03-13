@@ -1,0 +1,27 @@
+enable
+configure terminal
+hostname SW-02
+banner motd "ACESSO APENAS PARA PESSOAS AUTORIZADAS."
+username mardjff privilege 15 secret marcelodjff20
+username danilo privilege 15 secret danilo7
+enable secret marcelo*enable
+login local
+line console 0 
+password marcelo*console
+login local
+exit
+ip domain-name 1rede.local
+crypto key generate rsa general-key modulus 1024
+line vty 0 15
+password marcelo*vty
+transport input ssh
+login local
+exit
+service password-encryption
+interface vlan 1
+ip address 172.16.255.254 255.255.0.0
+no shutdown
+exit
+ip default-gateway 172.16.0.1
+exit
+wr
